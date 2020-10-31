@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const logger = require('./middleware/logger');
 const home = require('./routes/home');
 const genres = require('./routes/genres');
+const customers = require('./routes/customers');
 const express = require('express');
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use(logger);
 app.use(helmet());
 app.use('/api/genres', genres);
+app.use('/api/customers', customers);
 app.use('/', home);
 
 //Configuration
